@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # get ip main network card
-ip_addr=$('ifconfig | grep "inet 192 " | awk -F" " "{ print $2 }"')
+ip_addr=$('ifconfig eno1 | grep "inet " | awk -F" " '{ print $2 }'')
 
 ifconfig enp3s2 192.168.10.1 up
 echo "1" > /proc/sys/net/ipv4/ip_forward

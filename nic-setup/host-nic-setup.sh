@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ifconfig eno1 down
 ifconfig enp3s2 192.168.10.2 up

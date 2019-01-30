@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ifconfig enp3s2 down
 ifconfig eno1 up

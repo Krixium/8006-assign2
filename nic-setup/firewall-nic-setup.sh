@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # get ip main network card
 ip_addr=`ifconfig eno1 | grep 'inet ' | awk -F' ' '{ print \$2 }'`

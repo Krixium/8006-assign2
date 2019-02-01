@@ -12,6 +12,7 @@ echo "loading user settings ..."
 # generic setup
 $tool -F
 $tool -X
+$tool -t nat -F
 
 # reading in setting files to array
 declare -a icmp_in

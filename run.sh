@@ -3,6 +3,7 @@
 tool="iptables"
 tcp="-p tcp -m tcp"
 udp="-p udp -m udp"
+icmp="-p icmp -m icmp"
 eno_to_enp="-i eno1 -o enp3s2"
 
 echo "starting firewall setup ..."
@@ -51,4 +52,14 @@ for port in ${udp_out[*]}
 do
     $tool -t nat -A POSTROUTING -o eno1 $udp --sport $port -j MASQUERADE
     $tool -t nat -A POSTROUTING -o eno1 $udp --dport $port -j MASQUERADE
+done
+
+for t in ${icmp_in[*]}
+do
+    $tool -A FORWARD $eno_to_enp $icmp --icmp-type $t -j ACCEPT
+done
+
+for t in ${icmp_out[*]}
+do
+    $tool -t nat -A POSTROUTING -o eno1 $icmp --icmp-type $t -j MASQUERADE
 done

@@ -17,6 +17,7 @@
 	settings/internal_network_space.txt - The network space of the private network.
     settings/tcp_in_allow.txt - The TCP ports that will be open to incoming traffic.
     settings/tcp_out_allow.txt - The TCP ports that will be open to outgoing traffic.
+	settings/tool.txt - Absolute path the the tool to use. If not iptables must be have './' prefix.
     settings/udp_in_allow.txt - The TCP ports that will be open to incoming traffic.
     settings/udp_out_allow.txt - The TCP ports that will be open to outgoing traffic.
 

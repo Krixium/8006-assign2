@@ -2,7 +2,7 @@
 
 internal_network_space=`cat settings/internal_network_space.txt`
 
-tool="iptables"
+tool=`cat settings/tool.txt`
 apreroute="-A PREROUTING"
 apostroute="-A POSTROUTING"
 aforward="-A FORWARD"

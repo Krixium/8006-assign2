@@ -6,6 +6,7 @@ tool=`cat settings/tool.txt`
 apreroute="-A PREROUTING"
 apostroute="-A POSTROUTING"
 aforward="-A FORWARD"
+ainput="-A INPUT"
 nat="-t nat"
 tcp="-p tcp -m tcp"
 udp="-p udp -m udp"

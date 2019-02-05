@@ -56,7 +56,7 @@ $tool $aforward $out_to_in $udp --dport 137:139 -j DROP
 $tool $aforward $out_to_in $tcp --dport 111 -j DROP
 $tool $aforward $out_to_in $tcp --dport 515 -j DROP
 
-# allow existing connections
+# allow new and existing connections
 $tool $aforward $out_to_in -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 
 # open allowed ports

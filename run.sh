@@ -2,7 +2,6 @@
 
 internal_network_space=`cat settings/internal_network_space.txt`
 
-firewall_ip_addr=`ifconfig eno1 | grep 'inet ' | awk -F' ' '{ print \$2 }'`
 tool="iptables"
 apreroute="-A PREROUTING"
 apostroute="-A POSTROUTING"
@@ -15,6 +14,7 @@ external_interface=`cat settings/interface_external.txt`
 internal_interface=`cat settings/interface_internal.txt`
 out_to_in="-i $external_interface -o $internal_interface"
 in_to_out="-o $external_interface -i $internal_interface"
+firewall_ip_addr=`ifconfig $external_interface | grep 'inet ' | awk -F' ' '{ print \$2 }'`
 
 echo "configuring firewall ..."
 

@@ -12,20 +12,12 @@
 
     settings/icmp_in_allow.txt - The ICMP type numbers to be allowed in.
     settings/icmp_out_allow.txt - The ICMP type numbers to be out in.
+	settings/interface_external.txt - Name of external network inferface.
+	settings/interface_internal.txt - Name of internal network interface.
+	settings/internal_network_space.txt - The network space of the private network.
     settings/tcp_in_allow.txt - The TCP ports that will be open to incoming traffic.
     settings/tcp_out_allow.txt - The TCP ports that will be open to outgoing traffic.
     settings/udp_in_allow.txt - The TCP ports that will be open to incoming traffic.
     settings/udp_out_allow.txt - The TCP ports that will be open to outgoing traffic.
 
-Note: All entries into setting files should be one number per line and the very last line should be empty.
-
-``` Text
-E.g. Inside settings/tcp_in_allow.txt:
-22
-53
-67
-68
-80
-443
-
-```
+Note: For setting files that contain lists, each entry must be on a new line with 1 empty line at the end of the file.

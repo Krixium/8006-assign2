@@ -57,7 +57,7 @@ $tool $aforward $out_to_in $tcp --dport 111 -j DROP
 $tool $aforward $out_to_in $tcp --dport 515 -j DROP
 
 # allow existing connections
-$tool $aforward $out_to_in -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+$tool $aforward $out_to_in -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 
 # open allowed ports
 declare -a icmp_in

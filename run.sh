@@ -1,7 +1,6 @@
 #!/bin/bash
 
 internal_network_space=`cat settings/internal_network_space.txt`
-
 tool=`cat settings/tool.txt`
 apreroute="-A PREROUTING"
 apostroute="-A POSTROUTING"

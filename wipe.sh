@@ -2,6 +2,7 @@
 
 iptables -F
 iptables -F -t nat
+iptables -F -t mangle
 iptables -X
 
 iptables -P INPUT ACCEPT

@@ -7,6 +7,6 @@ readarray -t allowed_ports < $settings_file
 
 for port in ${allowed_ports[*]}
 do
-    hping3 -c 5 -S -p $port $firewall_address
+    hping3 -c 5 -i u1000 -S -p $port $firewall_address
 done
 

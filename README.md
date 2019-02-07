@@ -11,6 +11,8 @@
 
 ## Settings
 
+    settings/blocked_ports.txt - Used for testing only. Contains a list of blocked tcp and udp ports.
+    settings/blocked_types.txt - Used for testing only. Contains a list of blocked icmp types.
     settings/icmp_in_allow.txt - The ICMP type numbers to be allowed in.
     settings/icmp_out_allow.txt - The ICMP type numbers to be out in.
     settings/interface_external.txt - Name of external network inferface.

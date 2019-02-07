@@ -56,9 +56,6 @@ $tool $aforward $out_to_in $udp --dport 137:139 -j DROP
 $tool $aforward $out_to_in $tcp --dport 111 -j DROP
 $tool $aforward $out_to_in $tcp --dport 515 -j DROP
 
-# allow new and existing connections
-$tool $aforward $out_to_in -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
-
 # open allowed ports
 declare -a icmp_in
 declare -a icmp_out
@@ -76,26 +73,26 @@ readarray -t udp_out < settings/udp_out_allow.txt
 
 for port in ${tcp_in[*]}
 do
-    $tool $aforward $out_to_in $tcp --sport $port -j ACCEPT
-    $tool $aforward $out_to_in $tcp --dport $port -j ACCEPT
+    $tool $aforward $out_to_in $tcp --sport $port -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+    $tool $aforward $out_to_in $tcp --dport $port -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 done
 
 for port in ${tcp_out[*]}
 do
-    $tool $aforward $in_to_out $tcp --sport $port -j ACCEPT
-    $tool $aforward $in_to_out $tcp --dport $port -j ACCEPT
+    $tool $aforward $in_to_out $tcp --sport $port -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+    $tool $aforward $in_to_out $tcp --dport $port -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 done
 
 for port in ${udp_in[*]}
 do
-    $tool $aforward $out_to_in $udp --sport $port -j ACCEPT
-    $tool $aforward $out_to_in $udp --dport $port -j ACCEPT
+    $tool $aforward $out_to_in $udp --sport $port -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+    $tool $aforward $out_to_in $udp --dport $port -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 done
 
 for port in ${udp_out[*]}
 do
-    $tool $aforward $in_to_out $udp --sport $port -j ACCEPT
-    $tool $aforward $in_to_out $udp --dport $port -j ACCEPT
+    $tool $aforward $in_to_out $udp --sport $port -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+    $tool $aforward $in_to_out $udp --dport $port -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 done
 
 for t in ${icmp_in[*]}

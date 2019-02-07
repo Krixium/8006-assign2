@@ -9,10 +9,10 @@ readarray -t udp_ports < "../settings/udp_in_allow.txt"
 
 for port in ${tcp_ports[*]}
 do
-    hping3 -c 5 -a 192.168.10.100 -p $port -S $firewall_address
+    hping3 -c 5 -a 192.168.10.100 -s 7575 -p $port -S $firewall_address
 done
 
 for port in ${udp_ports[*]}
 do
-    hping3 -c 5 -a 192.168.10.100 -p $port --udp $firewall_address
+    hping3 -c 5 -a 192.168.10.100 -s 7575 -p $port --udp $firewall_address
 done

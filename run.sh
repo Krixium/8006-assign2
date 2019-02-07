@@ -36,25 +36,8 @@ $tool $nat $apreroute -d $firewall_ip_addr -j DNAT --to-destination 192.168.10.2
 # drop packets from outside with ip of internal network
 $tool $aforward $out_to_in -s $internal_network_space -j DROP
 
-# drop wrong direction packet
-$tool $aforward $tcp --syn --dport 1024:65535 -j DROP
-
 # drop syn fin packets
 $tool $aforward $tcp --tcp-flags SYN,FIN SYN,FIN -j DROP
-
-# telnet is bad
-$tool $aforward $tcp --sport 23 -j DROP
-$tool $aforward $tcp --dport 23 -j DROP
-$tool $aforward $udp --sport 23 -j DROP
-$tool $aforward $udp --dport 23 -j DROP
-
-# drop external traffic directed to ports 3278-32775, 137-139, TCP 111, TCP 515
-$tool $aforward $out_to_in $tcp --dport 3278:32775 -j DROP
-$tool $aforward $out_to_in $udp --dport 3278:32775 -j DROP
-$tool $aforward $out_to_in $tcp --dport 137:139 -j DROP
-$tool $aforward $out_to_in $udp --dport 137:139 -j DROP
-$tool $aforward $out_to_in $tcp --dport 111 -j DROP
-$tool $aforward $out_to_in $tcp --dport 515 -j DROP
 
 # open allowed ports
 declare -a icmp_in
@@ -105,6 +88,23 @@ do
     $tool $aforward $in_to_out $icmp --icmp-type $t -j ACCEPT
 done
 
+# drop external traffic directed to ports 3278-32775, 137-139, TCP 111, TCP 515
+$tool $aforward $out_to_in $tcp --dport 3278:32775 -j DROP
+$tool $aforward $out_to_in $udp --dport 3278:32775 -j DROP
+$tool $aforward $out_to_in $tcp --dport 137:139 -j DROP
+$tool $aforward $out_to_in $udp --dport 137:139 -j DROP
+$tool $aforward $out_to_in $tcp --dport 111 -j DROP
+$tool $aforward $out_to_in $tcp --dport 515 -j DROP
+
+# telnet is bad
+$tool $aforward $tcp --sport 23 -j DROP
+$tool $aforward $tcp --dport 23 -j DROP
+$tool $aforward $udp --sport 23 -j DROP
+$tool $aforward $udp --dport 23 -j DROP
+
+# drop wrong direction packet
+$tool $aforward $tcp --syn --dport 1024:65535 -j DROP
+
 # allow fragments
 $tool $aforward -f -j ACCEPT
 
@@ -115,5 +115,8 @@ $tool $apreroute -t mangle -p tcp --sport ftp-data -j TOS --set-tos Maximize-Thr
 $tool $apreroute -t mangle -p tcp --dport ssh -j TOS --set-tos Minimize-Delay
 $tool $apreroute -t mangle -p tcp --dport ftp -j TOS --set-tos Minimize-Delay
 $tool $apreroute -t mangle -p tcp --dport ftp-data -j TOS --set-tos Maximize-Throughput
+
+# default rule
+$tool $aforward -j DROP
 
 echo "firewall configured"

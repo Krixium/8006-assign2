@@ -8,11 +8,11 @@ readarray -t allow_tcp < "../settings/blocked_ports.txt"
 
 for port in ${allow_tcp[*]}
 do
-    hping3 -c 5 -S -p $port $firewall_address
+    hping3 -c 5 -i u1000 -S -p $port $firewall_address
 done
 
 for port in ${allow_udp[*]}
 do
-    hping3 -c 5 --udp -p $port $firewall_address
+    hping3 -c 5 -i u1000 --udp -p $port $firewall_address
 done
 

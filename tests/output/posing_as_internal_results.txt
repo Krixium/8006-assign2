@@ -1,0 +1,65 @@
+
+--- 192.168.0.18 hping statistic ---
+5 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+HPING 192.168.0.18 (eno1 192.168.0.18): S set, 40 headers + 0 data bytes
+
+--- 192.168.0.18 hping statistic ---
+5 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+HPING 192.168.0.18 (eno1 192.168.0.18): S set, 40 headers + 0 data bytes
+
+--- 192.168.0.18 hping statistic ---
+5 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+HPING 192.168.0.18 (eno1 192.168.0.18): S set, 40 headers + 0 data bytes
+
+--- 192.168.0.18 hping statistic ---
+5 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+HPING 192.168.0.18 (eno1 192.168.0.18): S set, 40 headers + 0 data bytes
+
+--- 192.168.0.18 hping statistic ---
+5 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+HPING 192.168.0.18 (eno1 192.168.0.18): S set, 40 headers + 0 data bytes
+
+--- 192.168.0.18 hping statistic ---
+5 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+HPING 192.168.0.18 (eno1 192.168.0.18): S set, 40 headers + 0 data bytes
+
+--- 192.168.0.18 hping statistic ---
+5 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+HPING 192.168.0.18 (eno1 192.168.0.18): udp mode set, 28 headers + 0 data bytes
+
+--- 192.168.0.18 hping statistic ---
+5 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+HPING 192.168.0.18 (eno1 192.168.0.18): udp mode set, 28 headers + 0 data bytes
+
+--- 192.168.0.18 hping statistic ---
+5 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+HPING 192.168.0.18 (eno1 192.168.0.18): udp mode set, 28 headers + 0 data bytes
+HPING 192.168.0.18 (eno1 192.168.0.18): udp mode set, 28 headers + 0 data bytes
+ICMP Port Unreachable from ip=192.168.0.18 get hostname...               name=UNKNOWN
+ICMP Port Unreachable from ip=192.168.0.22 get hostname...               name=UNKNOWN
+ICMP Port Unreachable from ip=192.168.0.18 get hostname...               name=UNKNOWN
+ICMP Port Unreachable from ip=192.168.0.22 get hostname...               name=UNKNOWN
+ICMP Port Unreachable from ip=192.168.0.18 get hostname...
+--- 192.168.0.18 hping statistic ---
+3 packets transmitted, 5 packets received, -66% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+               name=UNKNOWN
+
+--- 192.168.0.18 hping statistic ---
+5 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+HPING 192.168.0.18 (eno1 192.168.0.18): udp mode set, 28 headers + 0 data bytes
+
+--- 192.168.0.18 hping statistic ---
+5 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+HPING 192.168.0.18 (eno1 192.168.0.18): udp mode set, 28 headers + 0 data bytes

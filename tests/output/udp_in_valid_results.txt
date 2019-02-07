@@ -1,0 +1,6 @@
+hping: you must specify only one target host at a time
+hping: you must specify only one target host at a time
+hping: you must specify only one target host at a time
+hping: you must specify only one target host at a time
+hping: you must specify only one target host at a time
+hping: you must specify only one target host at a time

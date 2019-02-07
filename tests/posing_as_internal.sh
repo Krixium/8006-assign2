@@ -13,7 +13,6 @@ do
 done
 
 for port in ${udp_ports[*]}
-    hping3 -c 5 -a 192.168.10.100 -p $port --udp $firewall_address
 do
-
+    hping3 -c 5 -a 192.168.10.100 -p $port --udp $firewall_address
 done

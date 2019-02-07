@@ -9,6 +9,8 @@
     run.sh - Main script that sets up the firewall. Ensure that files in the settings folder are configured before running.
     wipe.sh - Compelely clears all firewall rules and sets all default policies to ACCEPT
 
+	tests/run_all.sh - Runs all tests in the folder(except for itself) and puts the logs into an output folder.
+
 ## Settings
 
     settings/blocked_ports.txt - Used for testing only. Contains a list of blocked tcp and udp ports.
